@@ -7,24 +7,30 @@
 class Hero {
   // Property declarations
   name;
-  #health;
+  #health; // Private field
   level;
 
-  gethealth() {
+  // Constructor to initialize properties
+  constructor(name, health, level) {
+    this.name = name;
+    this.#health = health;
+    this.level = level;
+  }
+
+  // Getter for health
+  getHealth() {
     return this.#health;
   }
-  sethealth(value) {
+
+  // Setter for health
+  setHealth(value) {
     this.#health = value;
   }
 }
 
 // Example usage
-const hero = new Hero();
-
-hero.name = "Arthur";
-hero.sethealth(100);
-hero.level = "A";
+const hero = new Hero("Arthur", 100, "A"); // Use constructor to initialize properties
 
 console.log(`Name: ${hero.name}`);
-console.log(`Health: ${hero.gethealth()}`);
+console.log(`Health: ${hero.getHealth()}`); // Use getter to get health
 console.log(`Level: ${hero.level}`);

@@ -17,6 +17,13 @@ public class Hero {
     private int health; // Made private
     char level;
 
+    // Constructor to initialize Hero properties
+    public Hero(String name, int health, char level) {
+        this.name = name;
+        this.health = health;
+        this.level = level;
+    }
+
     // Getter for health
     public int getHealth() {
         return health;
@@ -29,10 +36,7 @@ public class Hero {
 
     // Main method to demonstrate usage
     public static void main(String[] args) {
-        Hero hero = new Hero();
-        hero.name = "Arthur";
-        hero.setHealth(100); // Use setter to set health
-        hero.level = 'A';
+        Hero hero = new Hero("Arthur", 100, 'A'); // Use constructor to initialize properties
 
         // Print the properties
         System.out.println("Name: " + hero.name);
